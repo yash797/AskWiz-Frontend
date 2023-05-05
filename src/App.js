@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Login from "./components/auth/Login";
+import Message from "./components/message/Message";
 import Quora from "./components/Quora";
+import QuoraHeader from "./components/QuoraHeader";
 import { login, selectUser } from "./feature/userSlice";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
-
+import Profile from "./components/Profile";
 function App() {
+  
+
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -23,14 +29,27 @@ function App() {
           })
         );
         console.log("AuthUser", authUser);
+        localStorage.setItem("userName",(authUser.displayName));
       }
     });
   }, [dispatch]);
   return (
-    <div className="App">
+    <BrowserRouter>
+    <QuoraHeader />
+    <Routes>
+    {/* <div className="App"> */}
       {/* <h1>This is for testing</h1> */}
-      {user ? <Quora /> : <Login />}
-    </div>
+    <Route path='/' element={user ? <Quora /> : <Login />} />
+
+      
+    {/* </div>  */}
+    {/* <Route index element={<Quora />} /> */}
+    <Route path='/messages' element={user ?<Message /> : <Login />} />
+    <Route path='/profile/:username' element={user ?<Profile /> : <Login />} />
+
+    </Routes>
+    
+    </BrowserRouter>
   );
 }
 

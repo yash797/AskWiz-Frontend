@@ -19,7 +19,7 @@ import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { logout, selectUser } from "../feature/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 function QuoraHeader() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
@@ -55,6 +55,7 @@ function QuoraHeader() {
   };
 
   const handleLogout = () => {
+    const userName = localStorage.getItem("userName");
     if (window.confirm("Are you sure to logout ?")) {
       signOut(auth)
         .then(() => {
@@ -76,18 +77,24 @@ function QuoraHeader() {
           />
         </div>
         <div className="qHeader__icons">
+          <Link to="/">
           <div className="qHeader__icon">
             <HomeIcon />
           </div>
+          </Link>
           <div className="qHeader__icon">
             <FeaturedPlayListOutlinedIcon />
           </div>
+          <Link to="/messages">
           <div className="qHeader__icon">
             <AssignmentTurnedInOutlined />
           </div>
+          </Link>
+          <Link to="/profile/username">
           <div className="qHeader__icon">
             <PeopleAltOutlined />
           </div>
+          </Link>
           <div className="qHeader__icon">
             <NotificationsOutlined />
           </div>

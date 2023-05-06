@@ -1,0 +1,23 @@
+.message{
+    width: 100%;
+}
+
+.message__contents{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    padding: 50px 0;
+    background-color: rgba(133, 119, 119, 0.05);
+    min-width: fit-content;
+    min-height: fit-content;
+    width: 100%;
+  }
+  
+  .message__content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0px 10px;
+    width: 100%;
+    max-width: 1200px;
+  }

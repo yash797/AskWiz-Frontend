@@ -40,9 +40,7 @@ const Login = () => {
     <div className='main-body'>
     <div className="container-sign">
       <h2 className="h2-container">{isSignUp ? 'Sign Up' : 'Login'}</h2>
-      {isSignUp && (
-        <p>Create an account to access exclusive features.</p>
-      )}
+      
         <form className="form-sign" onSubmit={handleSubmit}>
         <input
          className='login-input'

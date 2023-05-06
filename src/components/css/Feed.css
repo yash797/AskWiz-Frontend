@@ -1,5 +1,6 @@
 .feed {
   display: flex;
   flex-direction: column;
-  flex: 0.6;
+  flex-basis: 50%;
+  /* flex: 0.6; */
 }

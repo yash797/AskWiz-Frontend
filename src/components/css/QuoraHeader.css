@@ -1,3 +1,16 @@
+.dropdown-container {
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
 .qHeader {
   display: flex;
   align-items: center;
@@ -121,9 +134,9 @@
 
 .modal__title {
   display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  border-bottom: 1px solid rgba(187, 187, 187, 0.5);
+  /* align-items: center; */
+  /* margin-bottom: 5px;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.5); */
 }
 
 .modal__title > h5 {

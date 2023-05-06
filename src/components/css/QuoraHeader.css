@@ -87,7 +87,9 @@ outline: "2px solid #000"
 
 .qHeader__icon {
   padding: 5px;
+  color: gray;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .qHeader__icon:hover {
@@ -103,6 +105,30 @@ outline: "2px solid #000"
 }
 
 .qHeader__icon:hover > .MuiSvgIcon-root {
+  color: #000;
+}
+
+.qHeader__icon-noti{
+  padding: 5px;
+  color: gray;
+  cursor: pointer;
+  margin-top:5px;
+  margin-right: 20px;
+  margin-left:20px;
+}
+
+.qHeader__icon-noti:hover {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.qHeader__icon-noti> .MuiSvgIcon-root {
+  color: gray;
+  font-size: xx-large;
+  margin-left: 18px;
+  margin-right: 20px;
+}
+.qHeader__icon-noti > .MuiSvgIcon-root {
   color: #000;
 }
 
@@ -156,17 +182,17 @@ outline: "2px solid #000"
 
 .qHeader__Rem > .MuiSvgIcon-root {
   font-size: xx-large;
-  color: gray;
+  color: cyan;
   margin-left: 25px;
   cursor: pointer;
 }
 .qHeader__Rem > .MuiSvgIcon-root:hover {
-  color: #000;
+  color: cyan;
 }
 
 .qHeader__Rem > .MuiButton-root {
   color: white;
-  background: #222;
+  background: rgb(0, 48, 239);
   text-transform: inherit;
   border-radius: 5px;
   margin-left: 25px;
@@ -174,7 +200,7 @@ outline: "2px solid #000"
 
 .qHeader__Rem > .MuiButton-root:hover {
   color: #222;
-  background: rgb(214, 214, 214);
+  background: rgb(106, 132, 235);
 }
 
 .modal__title {

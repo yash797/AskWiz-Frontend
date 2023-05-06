@@ -49,7 +49,7 @@ function QuestionModal() {
 
   return (
     <>
-          <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+          <Button onClick={() => setIsModalOpen(true)} style={{color:"white"}}>Add Question</Button>
 
     <Modal
             open={isModalOpen}

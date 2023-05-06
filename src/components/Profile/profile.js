@@ -96,7 +96,7 @@ const Profile = () => {
             </div>
             <div className="profile-body-container">
                 <div className="user-header">
-                    <h2 className="user-title">{user?.userName}</h2>
+                    <h2 className="user-title">{user?.uid}</h2>
                     <p className="user-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. At
                         pariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enim
                         eum quis minima.

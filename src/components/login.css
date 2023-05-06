@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #f1f1f1;
 
   }
@@ -21,7 +21,11 @@
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     align-items: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+  margin-top: 3%;
+  margin-bottom: 3%;
+
+
     
   }
   

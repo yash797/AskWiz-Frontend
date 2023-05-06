@@ -1,8 +1,13 @@
 import React from 'react';
 import './card.css';
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../feature/userSlice";
+import { auth } from "../../firebase";
 
 const Card = ({ member, i }) => {
+  const user = useSelector(selectUser);
+
     
   return (
 
@@ -11,11 +16,11 @@ const Card = ({ member, i }) => {
       <div className="post">
             <div className="post-header">
                 <div className="post-user-profile">
-                    <img src={member.profile_pic}alt="user-profile" />
+                    <img src={user?.photo} alt="user-profile" />
                 </div>
                 <div className="post-user-details">
                     <h3 className="post-username">
-                        {member.username}
+                    {user?.userName}
                     </h3>
                     <p className="post-date">
                         {member.date}

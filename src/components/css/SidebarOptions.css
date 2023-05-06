@@ -1,38 +1,112 @@
-.sidebarOptions {
-  display: flex;
-  flex-direction: column;
-}
-.sidebarOption {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-}
+.options-container {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .option-container {
+    position: relative;
+    /* padding: -0.5rem 1rem; */
+    margin-left: 2px;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  .option-container:hover {
+    background-color: #9c9c9c26;
+  }
+  
+  .option-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
 
-.sidebarOption:hover {
-  background: rgb(211, 211, 211);
-  border-radius: 5px;
-}
-.sidebarOption > img {
-  height: 30px;
-  border-radius: 5px;
-  margin-left: 20px;
-}
+  }
+  
+  .option-title {
+    color: #4b5563;
+    font-size: 1.5rem;
+    /* margin-right: 0.75rem; */
+margin-bottom: 0.5rem;
+  }
+  .option-container:hover .option-title{
+    color: #000000;
+  }
+  .option-details {
+    margin-top: 1rem;
+  }
+  
+  .option-description {
+    color: #4b5563;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .option-container {
+      padding: 0.5rem;
+    }
+  
+    .icon {
+      margin-right: 0.5rem;
+    }
+  
+    .option-title {
+      font-size: 1.25rem;
+    }
+  
+    .option-details {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  
+    .option-container.active .option-details {
+      display: block;
+    }
+  }
+  
 
-.sidebarOption > .MuiSvgIcon-root {
-  font-size: medium;
-  margin-left: 20px;
-}
-.sidebarOption > p {
-  margin-left: 10px;
-  color: gray;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.sidebarOption > .text {
-  margin-left: 23px;
-  color: gray;
-  font-weight: 400;
-  font-size: 13px;
-}
+  @media only screen and (max-width: 592px) {
+    .option-container {
+      padding: 0.2rem;
+    }
+  
+    .icon {
+      margin-right: 0.2rem;
+    }
+  
+    .option-title {
+      font-size: 0.75rem;
+    }
+  
+    .option-details {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  
+    .option-container.active .option-details {
+      display: block;
+    }
+  }

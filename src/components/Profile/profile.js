@@ -3,7 +3,11 @@ import SwiperCore, { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useEffect } from 'react';
 import Card from './Card';
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../feature/userSlice";
 import "../css/Profile.css";
+import { auth } from "../../firebase";
+import { Avatar } from '@material-ui/core';
 
 import 'swiper/swiper-bundle.css';
 
@@ -62,6 +66,8 @@ const members = [
 ];
 
 const Profile = () => {
+  const user = useSelector(selectUser);
+
 
     const [imageURL, setImageURL] = useState('');
 
@@ -84,11 +90,13 @@ const Profile = () => {
         </div>
         <div className="profile-body">
             <div className="profile-photo">
-                <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="profile_photo"/>
+                {/* <Avatar src={user?.photo} /> */}
+
+                <img src={user?.photo} alt="profile_photo"/>
             </div>
             <div className="profile-body-container">
                 <div className="user-header">
-                    <h2 className="user-title">Username</h2>
+                    <h2 className="user-title">{user?.userName}</h2>
                     <p className="user-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. At
                         pariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enim
                         eum quis minima.

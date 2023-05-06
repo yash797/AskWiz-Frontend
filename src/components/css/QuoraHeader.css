@@ -1,3 +1,61 @@
+.dropdown-container {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  border-radius: 100%;
+}
+
+/* Dropdown box container */
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+.question-input{
+
+border:none;
+
+outline: "2px solid #000";
+
+margin-top:20px;
+padding: 10px 20px;
+
+border-radius: 5px;
+background-color: #f2f2f2;
+font-size: 16px;
+color: #333;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease;
+
+border: none;
+
+background-color: #f2f2f2;
+font-size: 16px;
+color: #333;
+}
+
+
+input[type="text"]:hover {
+  background-color: #ddd;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.modal__Field{
+  margin: "5px 0";
+border: "1px solid lightgray";
+padding: "10px";
+outline: "2px solid #000"
+}
+
+
+
 .qHeader {
   display: flex;
   align-items: center;
@@ -121,9 +179,9 @@
 
 .modal__title {
   display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  border-bottom: 1px solid rgba(187, 187, 187, 0.5);
+  /* align-items: center; */
+  /* margin-bottom: 5px;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.5); */
 }
 
 .modal__title > h5 {
@@ -153,10 +211,11 @@
 .modal__info > .modal__scope {
   display: flex;
   align-items: center;
-  color: rgb(98, 98, 98);
+  color: rgb(252, 249, 249);
   padding: 5px;
   margin-left: 10px;
-  background-color: rgb(230, 230, 230);
+  width:30px;
+  /* background-color: rgb(230, 230, 230); */
   border-radius: 33px;
   cursor: pointer;
 }
@@ -164,8 +223,10 @@
 .modal__Field {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   flex: 1;
+  height: 100px;
 }
 
 .modal__Field > .modal__fieldLink {
@@ -185,7 +246,7 @@
 .modal__buttons {
   display: flex;
   flex-direction: column-reverse;
-  margin-top: 10px;
+  margin-top: 50px;
   align-items: center;
 }
 
@@ -196,7 +257,7 @@
   color: gray;
   font-weight: 500;
   padding: 10px;
-  border-radius: 33px;
+  border-radius: 11px;
   cursor: pointer;
 }
 
@@ -207,12 +268,13 @@
 .modal__buttons > .add {
   border: none;
   outline: none;
-  margin-top: 10px;
+  margin-top: 0px;
   background-color: #222;
   color: white;
   font-weight: 700;
   padding: 10px;
-  border-radius: 33px;
+  
+  border-radius: 11px;
   cursor: pointer;
   width: 50%;
 }

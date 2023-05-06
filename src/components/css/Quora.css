@@ -1,6 +1,6 @@
 .quora {
   width: "100%";
-  min-width: fit-content;
+  /* min-width: fit-content; */
 }
 
 .quora__contents {
@@ -15,14 +15,16 @@
 .quora__content {
   display: flex;
   flex-direction: row;
+  gap: 20px;
   padding: 0px 10px;
   width: 100%;
   max-width: 1200px;
 }
 
 .react-responsive-modal-modal {
-  width: 90vw;
-  height: 90vh;
+  width: 650px;
+  height: 550px;
+  border-radius: 11px;
 }
 
 .quill {

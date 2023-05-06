@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HomeIcon from "@material-ui/icons/Home";
+import Notification from "./NotificationModal";
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
 import {
   AssignmentTurnedInOutlined,
@@ -96,7 +97,7 @@ function QuoraHeader() {
           </div>
           </Link>
           <div className="qHeader__icon">
-            <NotificationsOutlined />
+            <Notification />
           </div>
         </div>
         <div className="qHeader__input">

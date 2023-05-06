@@ -1,8 +1,12 @@
-import React from 'react'
-
+import React from 'react';
+import "./Message.css";
+import ChatList from './chatList/chatList.js';
 const Message = () => {
   return (
-    <div>This is Message Section</div>
+    <div>
+      <ChatList/>
+    </div>
+
   )
 }
 

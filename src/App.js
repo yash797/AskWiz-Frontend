@@ -11,6 +11,8 @@ import { login, selectUser } from "./feature/userSlice";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import Profile from "./components/Profile";
+import LoginS from "./components/Login";
+
 function App() {
   
 
@@ -39,13 +41,15 @@ function App() {
     <Routes>
     {/* <div className="App"> */}
       {/* <h1>This is for testing</h1> */}
-    <Route path='/' element={user ? <Quora /> : <Login />} />
+    <Route path='/' element={<Quora /> } />
 
       
     {/* </div>  */}
     {/* <Route index element={<Quora />} /> */}
-    <Route path='/messages' element={user ?<Message /> : <Login />} />
-    <Route path='/profile/:username' element={user ?<Profile /> : <Login />} />
+    <Route path='/messages' element={<Message /> } />
+    <Route path='/auth' element={<LoginS /> } />
+
+    <Route path='/profile/:username' element={<Profile /> } />
 
     </Routes>
     

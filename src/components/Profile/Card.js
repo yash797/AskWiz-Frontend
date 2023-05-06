@@ -25,10 +25,10 @@ const Card = ({ member, i }) => {
                     <p className="post-date">
                         {member.date}
                     </p>
-                    <p className="post-tag">
-                        {member.category}
-                    </p>
                 </div>
+            </div>
+            <div className="post-tag">
+                <h4>{member.category}</h4>
             </div>
             <p className="post-body">
                 {member.description}

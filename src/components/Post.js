@@ -13,7 +13,7 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import CloseIcon from "@material-ui/icons/Close";
 import ReactQuill from "react-quill";
-// import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.snow.css";
 import ReactTimeAgo from "react-time-ago";
 import axios from "axios";
 import ReactHtmlParser from "html-react-parser";

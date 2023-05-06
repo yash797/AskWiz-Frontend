@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './login.css';
+
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -28,6 +30,11 @@ const Login = () => {
     const file = event.target.files[0];
     setProfilePic(URL.createObjectURL(file));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
 // const profilePic = "https://via.placeholder.com/300*300"
   return (
     <div className='main-body'>
@@ -66,16 +73,18 @@ const Login = () => {
         
         {isSignUp && (
           <>
-            <input
-            className='login-input'
+          <div classname="age-sex">
+          <input
+            className='sign-input'
               type="number"
               placeholder="Age"
               value={age}
               onChange={(e) => setAge(e.target.value)}
               required
             />
+        
             <select
-            className='login-select'
+            className='sign-select'
               value={sex}
               onChange={(e) => setSex(e.target.value)}
               required
@@ -85,6 +94,8 @@ const Login = () => {
               <option value="female">Female</option>
               <option value="other">Other</option>
             </select>
+          </div>
+
             <input
             className='login-input'
               type="text"
@@ -113,9 +124,9 @@ const Login = () => {
         </form>
       
 
-      <p>
+      <p className="p-para">
         {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
-        <span onClick={() => setIsSignUp(!isSignUp)}>
+        <span className="s-span" onClick={() => setIsSignUp(!isSignUp)}>
           {isSignUp ? 'Login' : 'Sign Up'}
         </span>
       </p>

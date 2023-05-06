@@ -12,6 +12,7 @@
     align-items: center;
     height: 100vh;
     background-color: #f1f1f1;
+
   }
   .container-sign {
     width: 400px;
@@ -57,6 +58,29 @@
     border: 1px solid #ccc;
     font-size: 14px;
   }
+
+  .sign-input{
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    display:inline-block;
+    width:48%;
+
+  }
+
+  .sign-select{
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    display:inline-block;
+    width:48%;
+    margin-left:4%;
+
+  }
   
   .sign-text {
     margin-bottom: 15px;
@@ -78,13 +102,13 @@
     margin-top: 10px;
   }
   
-  p {
+  .p-para {
     text-align: center;
     margin-top: 20px;
     color: #666;
   }
   
-  span {
+  .s-span {
     color: blue;
     cursor: pointer;
   }

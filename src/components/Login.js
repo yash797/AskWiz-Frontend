@@ -4,6 +4,7 @@ import './login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const[confirmPassword, setConfirmPassword]=useState('');
   const [age, setAge] = useState('');
   const [sex, setSex] = useState('');
   const [contactNumber, setContactNumber] = useState('');
@@ -52,6 +53,17 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+          {isSignUp && (
+            <input
+              className='login-input'
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          )}
+        
         {isSignUp && (
           <>
             <input
@@ -75,7 +87,8 @@ const Login = () => {
             </select>
             <input
             className='login-input'
-              type="tel"
+              type="text"
+              maxLength="10"
               placeholder="Contact Number"
               value={contactNumber}
               onChange={(e) => setContactNumber(e.target.value)}

@@ -22,8 +22,9 @@
 }
 
 .react-responsive-modal-modal {
-  width: 90vw;
-  height: 90vh;
+  width: 650px;
+  height: 550px;
+  border-radius: 11px;
 }
 
 .quill {

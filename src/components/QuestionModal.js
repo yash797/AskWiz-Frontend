@@ -71,20 +71,46 @@ function QuestionModal() {
             <div className="modal__info">
               <Avatar src={user?.photo} className="avatar" />
               <div className="modal__scope">
-                <PeopleAltOutlined />
-                <p>Public</p>
-                <ExpandMore />
+              <select value={selectedCategory} onChange={handleCategoryChange}>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+              <PeopleAltOutlined />
+              <ExpandMore />
+              </select>
+                
+               
+                
               </div>
             </div>
+            <form>
             <div className="modal__Field">
-              {/* <Input
-                value={question}
-                onChange={(e) => setQuestion(e.target.value)}
-                type=" text"
-                placeholder="Start your question with 'What', 'How', 'Why', etc. "
-              /> */}
-              <input value={question} onChange={(e) => setQuestion(e.target.value)} type="text" placeholder="Start your question with 'What', 'How', 'Why', etc. "  
-                className="question-input"/>
+              <input  className="question-input"value={question} onChange={(e) => setQuestion(e.target.value)} type="text" placeholder="Start your question with 'What', 'How', 'Why', etc. "  
+                />
+
+              {/* <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              > */}
+                <input
+                  type="text"
+                  className='question-input'
+                  value={inputUrl}
+                  onChange={(e) => setInputUrl(e.target.value)}
+                  
+                  placeholder="Optional: inclue a link that gives context"
+                />
+                {inputUrl !== "" && (
+                  <img
+                    style={{
+                      height: "40vh",
+                      objectFit: "contain",
+                    }}
+                    src={inputUrl}
+                    alt="displayimage"
+                  />
+                )}
               <div className="dropdown-container">
       <select value={selectedCategory} onChange={handleCategoryChange}>
         <option value="">Select a category</option>
@@ -98,38 +124,9 @@ function QuestionModal() {
         <option value="Technology">Technology</option>
         <option value="Discover Spaces">Discover Spaces</option>
       </select>
+    {/* </div> */}
     </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <input
-                  type="text"
-                  value={inputUrl}
-                  onChange={(e) => setInputUrl(e.target.value)}
-                  style={{
-                    margin: "5px 0",
-                    border: "1px solid lightgray",
-                    padding: "10px",
-                    outline: "2px solid #000",
-                  }}
-                  placeholder="Optional: inclue a link that gives context"
-                />
-                {inputUrl !== "" && (
-                  <img
-                    style={{
-                      height: "40vh",
-                      objectFit: "contain",
-                    }}
-                    src={inputUrl}
-                    alt="displayimage"
-                  />
-                )}
-              </div>
-            </div>
-            <div className="modal__buttons">
+    <div className="modal__buttons">
               <button className="cancle" onClick={() => setIsModalOpen(false)}>
                 Cancel
               </button>
@@ -137,6 +134,9 @@ function QuestionModal() {
                 Add Question
               </button>
             </div>
+            </div>
+            
+            </form>
           </Modal></>
   )
 }

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import ProfileNew from "./components/Profile/profile"
 import Login from "./components/auth/Login";
 import Message from "./components/message/Message";
 import Quora from "./components/Quora";
@@ -10,7 +11,7 @@ import QuoraHeader from "./components/QuoraHeader";
 import { login, selectUser } from "./feature/userSlice";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import Profile from "./components/Profile";
+import Profile from "./components/Profile/profile";
 import LoginS from "./components/Login";
 
 function App() {

@@ -11,7 +11,13 @@ import QuoraHeader from "./components/QuoraHeader";
 import { login, selectUser } from "./feature/userSlice";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
+<<<<<<< HEAD
 // import Profile from "./components/Profile";
+=======
+import Profile from "./components/Profile";
+import LoginS from "./components/Login";
+
+>>>>>>> a6411b5e6d834a942fb9a665ae1d9a8989b7af4a
 function App() {
   
 
@@ -40,15 +46,22 @@ function App() {
     <Routes>
     {/* <div className="App"> */}
       {/* <h1>This is for testing</h1> */}
-    <Route path='/' element={user ? <Quora /> : <Login />} />
+    <Route path='/' element={<Quora /> } />
 
       
     {/* </div>  */}
     {/* <Route index element={<Quora />} /> */}
+<<<<<<< HEAD
     <Route path='/messages' element={user ?<Message /> : <Login />} />
     <Route path='/profile/:username' element={user ?<ProfileNew /> : <Login />} /> 
     {/* <Route path='/profile/:username' element={user ?<Profile /> : <Login />} /> */}
 
+=======
+    <Route path='/messages' element={<Message /> } />
+    <Route path='/auth' element={<LoginS /> } />
+
+    <Route path='/profile/:username' element={<Profile /> } />
+>>>>>>> a6411b5e6d834a942fb9a665ae1d9a8989b7af4a
 
     </Routes>
     

@@ -14,7 +14,9 @@ import 'swiper/swiper-bundle.css';
 SwiperCore.use([Pagination, Navigation]);
 
 function messageme(){
-  alert("Send a message");
+  const message = " Hello World";
+  // window.alert(message);
+  window.location.href="http://localhost:3000/messages";
 }
 
 const members = [

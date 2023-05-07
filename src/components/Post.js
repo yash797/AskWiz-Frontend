@@ -69,7 +69,8 @@ function Post({ post }) {
   };
 
   const handleCommentReply = (answerId) => {
-    setSelectedAnswer(answerId);
+    setSelectedAnswer(prevAnswerId => prevAnswerId === answerId ? null : answerId);
+    
   };
 
   return (
@@ -135,15 +136,7 @@ function Post({ post }) {
         </div>
         {post.questionUrl !== "" && <img src={post.questionUrl} alt="url" />}
       </div>
-      <div className="post__footer">
-        <div className="post__footerAction">
-          <ArrowUpwardOutlined />
-          <ArrowDownwardOutlined />
-        </div>
-        <div className="post__footerLeft">
-          <ShareOutlined />
-        </div>
-      </div>
+    
       <div>
         <button className="comment-btn" onClick={() => setExpanded(!expanded)}>
           {expanded ? <ChatBubbleIcon /> : <ChatBubbleIcon />}

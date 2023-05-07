@@ -10,32 +10,44 @@ import Quora from "./components/Quora";
 import QuoraHeader from "./components/QuoraHeader";
 import { login, selectUser } from "./feature/userSlice";
 import { auth } from "./firebase";
-import { onAuthStateChanged } from "firebase/auth";
+// import { onAuthStateChanged } from "firebase/auth";
 import Profile from "./components/Profile/profile";
-import LoginS from "./components/Login";
-
+import LoginS from "./components/authNew/Login";
+// import { useNavigate } from "react-router-dom";
 function App() {
-  
+  // let navigate = useNavigate();
 
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
-    onAuthStateChanged(auth, (authUser) => {
-      if (authUser) {
-        dispatch(
-          login({
-            userName: authUser.displayName,
-            photo: authUser.photoURL,
-            email: authUser.email,
-            uid: authUser.uid,
-          })
-        );
-        console.log("AuthUser", authUser);
-        localStorage.setItem("userName",(authUser.displayName));
-      }
-    });
-  }, [dispatch]);
+    // if(localStorage.getItem("id") !== undefined||localStorage.getItem("id") !==null){
+    //   navigate("/auth")
+    // }
+      // dispatch(
+      //   login({
+      //     userName: localStorage.getItem("userName"),
+      //     photo: localStorage.getItem("photo"),
+      //     email: localStorage.getItem("email"),
+      //     uid: localStorage.getItem("uid"),
+      //   })
+      // );
+    // }
+    // onAuthStateChanged(auth, (authUser) => {
+    //   if (authUser) {
+    //     dispatch(
+    //       login({
+    //         userName: authUser.displayName,
+    //         photo: authUser.photoURL,
+    //         email: authUser.email,
+    //         uid: authUser.uid,
+    //       })
+    //     );
+    //     console.log("AuthUser", authUser);
+    //     localStorage.setItem("userName",(authUser.displayName));
+    //   }
+    // });
+  }, []);
   return (
     <BrowserRouter>
     <QuoraHeader />

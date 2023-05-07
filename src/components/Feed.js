@@ -14,7 +14,6 @@ function Feed() {
 console.log(category, prev);
 
 
-
   const [posts, setPosts] = useState([]);
   let Link="/api/questions"; 
     if(prev!==null){
@@ -24,6 +23,7 @@ console.log(category, prev);
       axios
           .get(Link)
           
+
           .then((res) => {
             console.log(res.data.reverse());
             setPosts(res.data);

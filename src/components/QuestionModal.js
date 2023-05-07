@@ -5,6 +5,7 @@ import {changeCategory} from "../feature/filterSlice";
 import { Modal } from "react-responsive-modal";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router';
 // import { selectUser } from "../features/userSlice";
 import CloseIcon from "@material-ui/icons/Close";
 import { Avatar, Button, Input } from "@material-ui/core";
@@ -16,27 +17,40 @@ function QuestionModal() {
   const user = useSelector(selectUser);
   const [question, setQuestion] = useState("");
   const [inputUrl, setInputUrl] = useState("");
-
+const[data, setData] = useState({});
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
   console.log(typeof selectedCategory);
 // console.log(category);
-  const handleSubmit = async () => {
-    if (question !== "") {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const body = {
-        questionName: question,
-        questionUrl: inputUrl,
-        category: selectedCategory,
-        user: user,
-      };
-
-      await axios
+let navigate=useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(localStorage.getItem('id')===undefined||null) {
+      alert("Please Login to add question");
+      navigate("/auth");
+      return;
+    }
+    const id= localStorage.getItem('id');
+    console.log(id);
+    await axios.get(`/api/user/${id}`)
+    .then((res)=>{
+      setData(res.data);
+      console.log(res.data);
+      if (question !== "") {
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+  
+          },
+        };
+        const body = {
+          questionName: question,
+          questionUrl: inputUrl,
+          category: selectedCategory,
+          user: res.data,
+        };
+        axios
         .post("/api/questions", body, config)
         .then((res) => {
           console.log(res.data);
@@ -47,7 +61,16 @@ function QuestionModal() {
           console.log(e);
           alert("Error in adding question");
         });
+        
+      }
+       
     }
+    
+    )
+    .catch((err)=>{
+      console.log(err);
+    })
+   
   };
 
 

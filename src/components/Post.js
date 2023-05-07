@@ -71,7 +71,8 @@ function Post({ post }) {
         <h4>{post?.user?.userName}</h4>
 
         <small>
-          <LastSeen date={post?.createdAt} />
+          {/* <LastSeen date={post?.createdAt} /> */}
+          {new Date(post?.createdAt).toLocaleString()}
         </small>
       </div>
       <div className="post__body">
@@ -125,7 +126,7 @@ function Post({ post }) {
             </div>
           </Modal>
         </div>
-        {post.questionUrl !== "" && <img src={post.questionUrl} alt="url" />}
+        {post.questionUrl !== "" && <img src={post.questionUrl} alt="url" className="postimg"/>}
       </div>
       <div className="post__footer">
         <div className="post__footerAction">

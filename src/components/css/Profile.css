@@ -1,4 +1,3 @@
-
 .profile-container{
     width: 100%;
     display: flex;
@@ -15,7 +14,7 @@
     margin: 0 auto;
 }
 
-.profile-banner > img{
+.profile-banner .profile-banner-image{
     object-fit: cover;
     margin: 0 auto;
     width: 100%;
@@ -52,7 +51,8 @@
 }
 
 .user-description{
-    margin: 1em 0;
+    margin: 1em 0 0;
+    text-align: left;
 }
 
 .user-data{
@@ -104,6 +104,7 @@
 
 .post:hover .post-username{
     color: #0c9bee;
+    
 }
 
 .post:hover{
@@ -111,7 +112,7 @@
     transition: 750ms;
 }
 
-.post-user-profile > img{
+.post-user-profile.postimg{
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -120,6 +121,7 @@
 
 .post-user-details{
     margin: 0 0 0 0.7em;
+
 }
 
 .post-date{
@@ -136,7 +138,7 @@
     height: 200px;
 }
 
-.post-image > img{
+.post-image .post-image-imge{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -144,10 +146,29 @@
 }
 
 .post-tag{
-    padding-bottom: 1em;
+    /* padding-bottom: 1em; */
     color: rgb(29, 155, 240);
     text-shadow: #9ea3a8;  
     font-size: 0.8em;
 }
 
+.messagebutton{
+    align-items: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
 
+.messagebutton > button{
+    background-color: rgb(0,48,239);
+    align-self: center;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-style: none;
+}

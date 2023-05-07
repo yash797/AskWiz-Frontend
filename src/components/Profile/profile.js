@@ -83,12 +83,13 @@ const Profile = () => {
         
 
         .then((res) => {
-          console.log(res.data.reverse());
-          setPosts(res.data);
+          console.log(res.data.data.reverse());
+          setPosts(res.data.data);
         })
         .catch((e) => {
           console.log(e);
         });
+
   }
   const [data, setData] = useState({});
 
@@ -139,18 +140,22 @@ const Profile = () => {
         <div className="profile-body">
             <div className="profile-photo">
                 {/* <Avatar src={user?.photo} /> */}
-                <div className='profile-pic'>
-              {data.picturePath} !== "" && (
+                {/* <div className='profile-photo-pic'> */}
+              {data.picturePath !== "" && (
                   <img
                     style={{
                       // height: "40vh",
+                      height: "50%",
+                      width: "50%",
+                      borderRadius: "50%",
                       objectFit: "contain",
+                      // marginRight: "50%",
                     }}
                     src={data.picturePath}
                     alt="displayimage"
                   />
-                )
-              </div>
+                )}
+              {/* </div> */}
                 {/* <img className="profile-photo-pic" src={user?.picturePath} alt="profile_photo"/> */}
             </div>
             <div className="profile-body-container">
@@ -240,12 +245,27 @@ const Profile = () => {
       
       <div className="postNew">
             <div className="post-header">
-                <div className="post-user-profile">
+                {/* <div className="post-user-profile">
                     <img src={user?.photo} alt="user-profile" className='post-user-profile-image' />
-                </div>
+                </div> */}
+                <div className='post-user-profile-image'>
+              {data.picturePath !== "" && (
+                  <img
+                    style={{
+                      // height: "40vh",
+                      height: "60px",
+                      width: "60px",
+                      borderRadius: "60%",
+                      objectFit: "contain",
+                    }}
+                    src={data.picturePath}
+                    alt="displayimage"
+                  />
+                )}
+              </div>
                 <div className="post-user-details">
                     <h3 className="post-username">
-                    {/* {member.user.userName} */}
+                    {member.user.Name}
                     </h3>
                     <p className="post-date">
                         {member.createdAt.slice(0,10)}

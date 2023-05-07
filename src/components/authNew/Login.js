@@ -183,7 +183,7 @@ const Login = () => {
 
       <p className="p-para">
         {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
-        <span className="s-span" onClick={() => setIsSignUp(!isSignUp)}>
+        <span className="s-span" onClick={(n) => setIsSignUp(!isSignUp)}>
           {isSignUp ? 'Login' : 'Sign Up'}
         </span>
       </p>

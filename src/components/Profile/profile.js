@@ -161,7 +161,7 @@ const Profile = () => {
             <div className="profile-body-container">
                 <div className="user-header">
                     <h2 className="user-title">{data.Name}</h2>
-                    <p className="user-description">{data.description}
+                    <p className="user-description"> {data.description}
                     </p>
                 </div>
                 <ul className="user-data">
@@ -267,12 +267,15 @@ const Profile = () => {
                     <h3 className="post-username">
                     {member.user.Name}
                     </h3>
-                    <p className="post-date">
-                        {member.createdAt.slice(0,10)}
-                    </p>
-                    <p className="post-tag">
-                        {member.category}
-                    </p>
+                    <div>
+                      <p className="post-date">
+                          {member.createdAt.slice(0,10)}
+                      </p>
+                      <p className="post-tag">
+                          {member.category}
+                      </p>
+                    </div>
+                    
                 </div>
             </div>
             <p className="post-body">

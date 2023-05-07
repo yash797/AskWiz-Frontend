@@ -53,6 +53,10 @@
     object-fit: cover;
 }
 
+.post-username{
+  white-space: nowrap;
+}
+
 .post-user-details{
     /*flex: 1;  allow details to occupy remaining space */
     display: flex;
@@ -64,6 +68,7 @@
     font-size: 0.8em;
     color: gray;
     margin-left: 140px;
+    white-space: nowrap;
 
 }
 

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import './login.css';
+import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -183,7 +184,7 @@ const Login = () => {
 
       <p className="p-para">
         {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
-        <span className="s-span" onClick={() => setIsSignUp(!isSignUp)}>
+        <span className="s-span" onClick={(n) => setIsSignUp(!isSignUp)}>
           {isSignUp ? 'Login' : 'Sign Up'}
         </span>
       </p>
@@ -192,4 +193,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login;

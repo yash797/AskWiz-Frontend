@@ -9,11 +9,11 @@ import { useEffect } from "react";
 function Quora() {
   let navigate = useNavigate();
 
-  useEffect(() => {
-  if(localStorage.getItem("id") === undefined||localStorage.getItem("id") === null){
-    navigate("/auth")
-  }
-}, []);
+//   useEffect(() => {
+//   if(localStorage.getItem("id") === undefined||localStorage.getItem("id") === null){
+//     navigate("/auth")
+//   }
+// }, []);
   return (
     <div className="quora">
       {/* <QuoraHeader /> */}

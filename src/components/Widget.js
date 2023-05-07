@@ -14,5 +14,4 @@ function Widget() {
     </div>
   );
 }
-
 export default Widget;

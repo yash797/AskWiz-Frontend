@@ -1,8 +1,15 @@
 import { Add, Business, History, MusicNote, Psychology, Science, SportsEsports, Theaters, VideoLibrary } from "@material-ui/icons";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { changeCategory } from "../feature/filterSlice";
 import { useState } from 'react';
+import { useSelector } from "react-redux";
 import "./css/SidebarOptions.css";
 const options = [
+  {
+    Icon: History,
+    title: "All Categories",
+  },
   {
     Icon: History,
     title: "History",
@@ -15,6 +22,7 @@ const options = [
     Icon: History,
     title: "Psychology",
   },
+
   {
     Icon: SportsEsports,
     title: "Sports",
@@ -42,7 +50,18 @@ const options = [
 ];
 
 function SidebarOptions() {
+  const category = useSelector((state) => state.filter.category);
+
   const [selectedOption, setSelectedOption] = useState(null);
+  const dispatch = useDispatch();
+
+  const handleCategory = (e) => {
+    if(e==="All Categories"){
+      e=null
+    }
+
+    dispatch(changeCategory(e));
+  };
 
   const isMobile = window.innerWidth <= 768;
 
@@ -61,13 +80,18 @@ function SidebarOptions() {
       {options.map((option, index) => (
         <div
           key={index}
-          className="option-container"
-          onClick={() => setSelectedOption(selectedOption === index ? null : index)}
+          // className="option-container"
+          className= {category=== option.title?"active-option-container":"option-container"}
+
+          onClick={() => {setSelectedOption(selectedOption === index ? null : index)
+          handleCategory(option.title)
+        }}
         >
-          <div className="option-header">
+          <div className= "option-header">
             <option.Icon className="icon" />
             <p className="option-title">{option.title}</p>
           </div>
+          
           {selectedOption === index && (
             <div className="option-details">
               <p className="option-description">{option.description}</p>

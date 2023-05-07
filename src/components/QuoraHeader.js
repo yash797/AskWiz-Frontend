@@ -102,11 +102,9 @@ const navigateToProfile = () => {
             <AssignmentTurnedInOutlined />
           </div>
           </Link>
-          {/* <Link to="/profile/username">
-          <div className="qHeader__icon">
-            <PeopleAltOutlined />
-          </div>
-          </Link> */}
+          <Link to="/profile/username">
+         
+          </Link>
           <div className="qHeader__icon-noti">
             <Notification />
           </div>

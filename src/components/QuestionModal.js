@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from "axios";
 import { logout, selectUser } from "../feature/userSlice";
-
+import {changeCategory} from "../feature/filterSlice";
 import { Modal } from "react-responsive-modal";
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +20,8 @@ function QuestionModal() {
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
+  console.log(typeof selectedCategory);
+// console.log(category);
   const handleSubmit = async () => {
     if (question !== "") {
       const config = {
@@ -30,8 +32,10 @@ function QuestionModal() {
       const body = {
         questionName: question,
         questionUrl: inputUrl,
+        category: selectedCategory,
         user: user,
       };
+
       await axios
         .post("/api/questions", body, config)
         .then((res) => {
@@ -112,6 +116,7 @@ function QuestionModal() {
                   />
                 )}
               <div className="dropdown-container">
+
       <select value={selectedCategory} onChange={handleCategoryChange}>
         <option value="">Select a category</option>
         <option value="History">History</option>
@@ -123,8 +128,10 @@ function QuestionModal() {
         <option value="Movies">Movies</option>
         <option value="Technology">Technology</option>
         <option value="Discover Spaces">Discover Spaces</option>
+
       </select>
     {/* </div> */}
+
     </div>
     <div className="modal__buttons">
               <button className="cancle" onClick={() => setIsModalOpen(false)}>
@@ -138,7 +145,11 @@ function QuestionModal() {
             
             </form>
           </Modal></>
+
+
   )
+
 }
+
 
 export default QuestionModal

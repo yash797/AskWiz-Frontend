@@ -103,9 +103,7 @@ const navigateToProfile = () => {
           </div>
           </Link>
           <Link to="/profile/username">
-          <div className="qHeader__icon">
-            <PeopleAltOutlined />
-          </div>
+         
           </Link>
           <div className="qHeader__icon-noti">
             <Notification />

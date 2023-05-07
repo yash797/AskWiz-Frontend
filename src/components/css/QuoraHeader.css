@@ -26,19 +26,19 @@ padding: 10px 20px;
 border-radius: 5px;
 background-color: #f2f2f2;
 font-size: 16px;
-color: #333;
+color: #fefcfc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 transition: all 0.3s ease;
 
 border: none;
 
-background-color: #f2f2f2;
+
 font-size: 16px;
-color: #333;
+
 }
 
 
-input[type="text"]:hover {
+/*input[type="text"]:hover {
   background-color: #ddd;
 }
 
@@ -46,7 +46,7 @@ input[type="text"]:focus {
   outline: none;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+}*/
 .modal__Field{
   margin: "5px 0";
 border: "1px solid lightgray";

@@ -13,7 +13,7 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import CloseIcon from "@material-ui/icons/Close";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import "react-quill/dist/quill.snow.css";
 import ReactTimeAgo from "react-time-ago";
 import axios from "axios";
 import ReactHtmlParser from "html-react-parser";
@@ -127,18 +127,12 @@ function Post({ post }) {
         </div>
         {post.questionUrl !== "" && <img src={post.questionUrl} alt="url" />}
       </div>
-      <div className="post__footer">
-        <div className="post__footerAction">
-          <ArrowUpwardOutlined />
-          <ArrowDownwardOutlined />
-        </div>
-        <RepeatOneOutlined />
-        <ChatBubbleOutlined />
+      
         <div className="post__footerLeft">
           <ShareOutlined />
-          <MoreHorizOutlined />
+          {/* <MoreHorizOutlined /> */}
         </div>
-      </div>
+      
       <p
         style={{
           color: "rgba(0,0,0,0.5)",
@@ -170,6 +164,7 @@ function Post({ post }) {
               }}
               className="post-answer-container"
             >
+              
               <div
                 style={{
                   display: "flex",
@@ -193,9 +188,23 @@ function Post({ post }) {
                     <LastSeen date={_a?.createdAt} />
                   </span>
                 </div>
+                
               </div>
               <div className="post-answer">{ReactHtmlParser(_a?.answer)}</div>
+              <div className="post__footer">
+        <div className="post__footerAction">
+          <ArrowUpwardOutlined />
+          <ArrowDownwardOutlined />
+        </div>
+        {/* <RepeatOneOutlined /> */}
+        <ChatBubbleOutlined />
+        <div className="post__footerLeft">
+          <ShareOutlined />
+          {/* <MoreHorizOutlined /> */}
+        </div>
+      </div>
             </div>
+            
           </>
         ))}
       </div>
@@ -203,4 +212,4 @@ function Post({ post }) {
   );
 }
 
-export default Post;
+export default Post;

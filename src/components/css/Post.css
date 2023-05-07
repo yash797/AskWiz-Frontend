@@ -87,12 +87,14 @@
   display: flex;
   align-items: center;
   margin-top: 5px;
+ 
 }
 
 .post__footer > .MuiSvgIcon-root {
   color: gray;
   margin-right: 40px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .post__footerAction {
@@ -100,6 +102,7 @@
   padding: 5px;
   align-items: center;
   display: flex;
+  
   justify-content: space-around;
   border-radius: 33px;
 }
@@ -122,6 +125,7 @@
   color: gray;
   cursor: pointer;
   margin-left: 30px;
+  margin-top: 20px;
 }
 
 .modal__question {
@@ -174,10 +178,11 @@
   border: none;
   margin-top: 10px;
   outline: none;
+
   color: gray;
   font-weight: 500;
   padding: 10px;
-  border-radius: 33px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -188,17 +193,18 @@
   border: none;
   outline: none;
   margin-top: 5px;
-  background-color: #222;
+  background-color: #35e828;
   color: white;
   font-weight: 700;
   padding: 10px;
-  border-radius: 33px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 50%;
+  width: fit-content;
+  
 }
 .modal__button > .add:hover {
-  background-color: #eee;
-  color: #222;
+  background-color: #98ee85;
+  color: #fdf9f9;
 }
 
 .react-responsive-modal-modal {

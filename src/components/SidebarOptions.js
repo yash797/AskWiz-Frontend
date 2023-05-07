@@ -1,4 +1,8 @@
-import { Add, Business, History, MusicNote, Psychology, Science, SportsEsports, Theaters, VideoLibrary } from "@material-ui/icons";
+import { Add, Business, History, MusicNote, SportsEsports, Theaters, VideoLibrary } from "@material-ui/icons";
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import ScienceIcon from '@mui/icons-material/Science';
+
+
 import React from "react";
 import { useState } from 'react';
 import "./css/SidebarOptions.css";
@@ -12,7 +16,7 @@ const options = [
     title: "Business",
   },
   {
-    Icon: History,
+    Icon: PsychologyIcon,
     title: "Psychology",
   },
   {
@@ -24,7 +28,7 @@ const options = [
     title: "Music",
   },
   {
-    Icon: History,
+    Icon: ScienceIcon,
     title: "Science",
   },
   {

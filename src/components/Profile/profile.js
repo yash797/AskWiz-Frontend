@@ -13,6 +13,10 @@ import 'swiper/swiper-bundle.css';
 
 SwiperCore.use([Pagination, Navigation]);
 
+function messageme(){
+  alert("Send a message");
+}
+
 const members = [
     {
         username: "Username",
@@ -79,6 +83,7 @@ const Profile = () => {
         }
         fetchRandomImage();
       },[]);
+      
   return (
     <>
     
@@ -91,7 +96,6 @@ const Profile = () => {
         <div className="profile-body">
             <div className="profile-photo">
                 {/* <Avatar src={user?.photo} /> */}
-
                 <img src={user?.photo} alt="profile_photo"/>
             </div>
             <div className="profile-body-container">
@@ -107,9 +111,22 @@ const Profile = () => {
                     <li className="data-item">500 followers</li>
                     <li className="data-item">500 following</li>
                 </ul>
+                {/* <div className="messagebutton"> 
+                  <button onClick={messageme}>
+                    Message
+                  </button>
+                </div> */}
             </div>
         </div>
     </div>
+
+    <div className="messagebutton"> 
+      <button onClick={messageme}>
+        Message
+      </button>
+    </div>
+
+
 
 
 

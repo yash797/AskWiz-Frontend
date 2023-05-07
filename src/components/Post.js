@@ -28,6 +28,7 @@ function LastSeen({ date }) {
   );
 }
 function Post({ post }) {
+  console.log("Post:",post.answers)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [answer, setAnswer] = useState("");
   const Close = <CloseIcon />;
@@ -54,7 +55,7 @@ function Post({ post }) {
       await axios
         .post("/api/answers", body, config)
         .then((res) => {
-          console.log(res.data);
+          // console.log("Res:",res.data);
           alert("Answer added succesfully");
           setIsModalOpen(false);
           window.location.href = "/";
@@ -148,7 +149,7 @@ function Post({ post }) {
           margin: "10px 0",
         }}
       >
-        {post?.allAnswers.length} Answer(s)
+        {post?.answers.length} Answer(s)
       </p>
 
       <div
@@ -159,7 +160,7 @@ function Post({ post }) {
         }}
         className="post__answer"
       >
-        {post?.allAnswers?.map((_a) => (
+        {post?.answers?.map((_a) => (
           <>
             <div
               style={{

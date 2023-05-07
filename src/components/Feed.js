@@ -16,6 +16,7 @@ console.log(category, prev);
 
   const [posts, setPosts] = useState([]);
   let Link="/api/questions"; 
+
     if(prev!==null){
       Link=`/api/questions?category=${prev}`;
     }
@@ -25,8 +26,8 @@ console.log(category, prev);
           
 
           .then((res) => {
-            console.log(res.data.reverse());
-            setPosts(res.data);
+            console.log(res.data.data);
+            setPosts(res.data.data.reverse());
           })
           .catch((e) => {
             console.log(e);

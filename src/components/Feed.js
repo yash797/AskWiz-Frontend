@@ -11,7 +11,7 @@ function Feed() {
   if(prev!== category){
     setPrev(category);
   }
-console.log(category, prev);
+// console.log(category, prev);
 
 
   const [posts, setPosts] = useState([]);
@@ -21,13 +21,14 @@ console.log(category, prev);
       Link=`/api/questions?category=${prev}`;
     }
     const handlePost = () => {
+      console.log(category, prev);
       axios
           .get(Link)
-          
 
           .then((res) => {
             console.log(res.data.data);
             setPosts(res.data.data.reverse());
+
           })
           .catch((e) => {
             console.log(e);
@@ -53,14 +54,25 @@ console.log(category, prev);
   return (
     <div className="feed">
       <QuoraBox />
+      <>
+      {prev === null ? 
+      <>
+
       {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}
-      {/* <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post /> */}
+      </>
+      :
+      <>
+      {posts.map((post, index) => (
+        prev===post.category && <Post key={index} post={post} />
+        // <Post key={index} post={post} />
+
+    ))}
+    </>
+    }
+</>
+      
     </div>
   );
 }

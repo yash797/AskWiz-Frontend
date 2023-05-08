@@ -18,18 +18,23 @@ import "react-responsive-modal/styles.css";
 import axios from "axios";
 import QModal from "./QuestionModal";
 import { auth } from "../firebase";
-import { signOut } from "firebase/auth";
+// import { signOut } from "firebase/auth";
 import { logout, selectUser } from "../feature/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 function QuoraHeader() {
-  
+  let navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
   const [question, setQuestion] = useState("");
@@ -37,6 +42,9 @@ function QuoraHeader() {
 
   const Close = <CloseIcon />;
   const dispatch = useDispatch();
+  // const signOut = () => {
+  //   localStorage.removeItem("id");
+  // };    
   const user = useSelector(selectUser);
 
   const handleSubmit = async () => {
@@ -86,16 +94,15 @@ const navigateToProfile = () => {
   };
 
   const handleLogout = () => {
-    const userName = localStorage.getItem("userName");
+    const Name = localStorage.getItem("Name");
     if (window.confirm("Are you sure to logout ?")) {
-      signOut(auth)
-        .then(() => {
-          dispatch(logout());
-          console.log("Logged out");
-        })
-        .catch(() => {
-          console.log("error in logout");
-        });
+    localStorage.removeItem("id")
+
+    navigate("/");
+    window.location.reload();
+
+
+      
     }
   };
   useEffect(()=> {
@@ -135,14 +142,50 @@ const navigateToProfile = () => {
           <Search />
           <input type="text" placeholder="Search questions" />
         </div>
-        <div className="qHeader__Rem">
+        {/* <div className="qHeader__Rem">
           <span onClick={navigateToProfile}>
             <Avatar src={user?.photo} />
             
           </span>
+          
 
          <QModal/>
+        </div> */}
+        <div className="dropdown-container">
+      <button className="dropdown-button" onClick={toggleDropdown}>
+      {/* <Avatar src={user?.photo} /> */}
+      <div className='post-user-profile-image'>
+              {data.picturePath !== "" && (
+                  <img
+                    style={{
+                      // height: "40vh",
+                      height: "40px",
+                      width: "40px",
+                      borderRadius: "60%",
+                      objectFit: "contain",
+                      marginBottom: "10px",
+                    }}
+                    src={data.picturePath}
+                    alt="displayimage"
+                  />
+                )}
+              </div>
+        
+        <span className="dropdown-arrow">&#9660;</span>
+      </button>
+      {isOpen && (
+        <div className="dropdown-menu">
+          <ul className="dropdown-list">
+            <li><button className="dropdown-item-prof">View Profile</button></li>
+            <li className="dropdown-item">Settings</li>
+            <li className="dropdown-item" onClick={handleLogout}>Logout</li>
+          </ul>
         </div>
+      )}
+
+    </div>
+    <QModal/>
+
       </div>
     </div>
   );

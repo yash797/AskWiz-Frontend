@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HomeIcon from "@material-ui/icons/Home";
 import Notification from "./NotificationModal";
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
@@ -23,6 +23,7 @@ import { logout, selectUser } from "../feature/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function QuoraHeader() {
+  
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleCategoryChange = (event) => {
@@ -32,6 +33,8 @@ function QuoraHeader() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState("");
   const [question, setQuestion] = useState("");
+  const [data, setData] = useState({});
+
   const Close = <CloseIcon />;
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -61,6 +64,22 @@ function QuoraHeader() {
         });
     }
   };
+  const handleProfile=async()=>{
+      
+      const id= localStorage.getItem('id');
+      console.log(id);
+      await axios.get(`/api/user/${id}`)
+      .then((res)=>{
+        setData(res.data);
+        console.log(res.data);
+      }
+      
+      )
+      .catch((err)=>{
+        console.log(err);
+      }
+      )
+    }
 const navigateToProfile = () => {
   
     window.location.href = `/profile/${user?.userName}`;
@@ -79,6 +98,9 @@ const navigateToProfile = () => {
         });
     }
   };
+  useEffect(()=> {
+    handleProfile();
+  },[]);
   return (
     <div className="qHeader">
       <div className="qHeader-content">
@@ -116,6 +138,7 @@ const navigateToProfile = () => {
         <div className="qHeader__Rem">
           <span onClick={navigateToProfile}>
             <Avatar src={user?.photo} />
+            
           </span>
 
          <QModal/>

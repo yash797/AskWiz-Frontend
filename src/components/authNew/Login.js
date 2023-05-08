@@ -34,6 +34,8 @@ const Login = () => {
         // Sign Up
         const response = await axios.post('api/auth/signup', userData);
         console.log('Sign Up Response:', response.data);
+        navigate("/auth");
+
       } else {
         // Login
         const response = await axios.post('api/auth/signin', userData);

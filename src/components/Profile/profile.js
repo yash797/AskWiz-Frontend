@@ -110,7 +110,7 @@ const Profile = () => {
     )
   }
 
-  const user = useSelector(selectUser);
+  // const user = useSelector(selectUser);
   
 
 
@@ -118,7 +118,7 @@ const Profile = () => {
 
     useEffect(()=> {
         async function fetchRandomImage(){
-            const response = await fetch('https://api.unsplash.com/photos/random/?client_id=lZE-i5apl79LE2svJXNgwPHu0b8q9Ubu1vKL4eGv_UQ');
+            const response = await fetch('https://api.unsplash.com/photos/random/?query=technology&client_id=lZE-i5apl79LE2svJXNgwPHu0b8q9Ubu1vKL4eGv_UQ');
             const data = await response.json();
             setImageURL(data.urls.regular);
         }
@@ -145,8 +145,8 @@ const Profile = () => {
                   <img
                     style={{
                       // height: "40vh",
-                      height: "50%",
-                      width: "50%",
+                      height: "75%",
+                      width: "75%",
                       borderRadius: "50%",
                       objectFit: "contain",
                       // marginRight: "50%",
@@ -161,7 +161,7 @@ const Profile = () => {
             <div className="profile-body-container">
                 <div className="user-header">
                     <h2 className="user-title">{data.Name}</h2>
-                    <p className="user-description">{data.description}
+                    <p className="user-description"> {data.description}
                     </p>
                 </div>
                 <ul className="user-data">
@@ -180,7 +180,7 @@ const Profile = () => {
 
 
 
-<h2 className="post-section">Recent Posts</h2>
+<h2 className="post-section">Recent Questions</h2>
 
     <Swiper
     effect={"coverflow"}
@@ -267,12 +267,15 @@ const Profile = () => {
                     <h3 className="post-username">
                     {member.user.Name}
                     </h3>
-                    <p className="post-date">
-                        {member.createdAt.slice(0,10)}
-                    </p>
-                    <p className="post-tag">
-                        {member.category}
-                    </p>
+                    <div>
+                      <p className="post-date">
+                          {member.createdAt.slice(0,10)}
+                      </p>
+                      <p className="post-tag">
+                          {member.category}
+                      </p>
+                    </div>
+                    
                 </div>
             </div>
             <p className="post-body">

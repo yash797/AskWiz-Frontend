@@ -90,8 +90,17 @@ function QuoraHeader() {
     }
 const navigateToProfile = () => {
   
-    window.location.href = `/profile/${user?.userName}`;
+    window.location.href = `/profile/${data._id}`;
   };
+
+ 
+
+  // const handleButtonClick = () => {
+  //   const username = 'username'; // Replace 'username' with the actual username
+
+  //   // Navigate to the profile route
+  //   navigate(`/profile/${username}`);
+  // };
 
   const handleLogout = () => {
     const Name = localStorage.getItem("Name");  
@@ -176,7 +185,7 @@ const navigateToProfile = () => {
       {isOpen && (
         <div className="dropdown-menu">
           <ul className="dropdown-list">
-            <li><button className="dropdown-item-prof">View Profile</button></li>
+            <li><button className="dropdown-item-prof " onClick={navigateToProfile}>View Profile</button></li>
             <li className="dropdown-item">Settings</li>
             <li className="dropdown-item" onClick={handleLogout}>Logout</li>
           </ul>

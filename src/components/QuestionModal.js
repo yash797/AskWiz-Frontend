@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router';
 import CloseIcon from "@material-ui/icons/Close";
 import { Avatar, Button, Input } from "@material-ui/core";
 import { PeopleAltOutlined, ExpandMore } from "@material-ui/icons";
+import { color } from '@mui/system';
 function QuestionModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const Close = <CloseIcon />;
@@ -78,7 +79,23 @@ let navigate=useNavigate();
 
   return (
     <>
-          <Button onClick={() => setIsModalOpen(true)} style={{color:"white"}}>Add Question</Button>
+    <Button
+  className="add-btn"
+  onClick={() => setIsModalOpen(true)}
+  style={{ background: "blue", color: "white", transition: "background 0.3s",
+}}
+onMouseEnter={(e) => {
+  e.target.style.background = "rgba(0, 0, 255, 0.7)";
+}}
+onMouseLeave={(e) => {
+  e.target.style.background = "blue";
+}}
+
+>
+  Add Question
+</Button>
+
+          {/* <Button className="add-btn" onClick={() => setIsModalOpen(true)} style={{background:"blue"}}>Add Question</Button> */}
 
     <Modal
             open={isModalOpen}

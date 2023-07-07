@@ -5,6 +5,7 @@ import { changeCategory } from "../feature/filterSlice";
 import { useState } from 'react';
 import { useSelector } from "react-redux";
 import "./css/SidebarOptions.css";
+// import {ScienceIcon} from '@mui/icons-material/Science';
 const options = [
   {
     Icon: History,
@@ -32,7 +33,7 @@ const options = [
     title: "Music",
   },
   {
-    Icon: History,
+    Icon: VideoLibrary,
     title: "Science",
   },
   {

@@ -94,7 +94,7 @@ const navigateToProfile = () => {
   };
 
   const handleLogout = () => {
-    const Name = localStorage.getItem("Name");
+    const Name = localStorage.getItem("Name");  
     if (window.confirm("Are you sure to logout ?")) {
     localStorage.removeItem("id")
 

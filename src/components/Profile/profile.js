@@ -75,7 +75,7 @@ const Profile = () => {
   }
   const [posts, setPosts] = useState([]);
 
-  let Link="/api/questions"; 
+  let Link="https://techieso7.onrender.com/api/questions"; 
   
   const handlePost = () => {
     axios

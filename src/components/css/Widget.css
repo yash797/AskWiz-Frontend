@@ -26,4 +26,5 @@
 .widget__contents {
   display: flex;
   flex-direction: column;
+  /* color: #0a68db70; */
 }

@@ -35,6 +35,7 @@ const Login = () => {
         const response = await axios.post('api/auth/signup', userData);
         console.log('Sign Up Response:', response.data);
         navigate("/auth");
+        window.location.reload();
 
       } else {
         // Login
@@ -42,6 +43,7 @@ const Login = () => {
         console.log('Login Response:', response.data);
         localStorage.setItem('id', response.data.user._id);
         navigate("/");
+        window.location.reload();
       }
     } catch (error) {
       console.error('Error:', error);

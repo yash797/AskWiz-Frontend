@@ -166,7 +166,7 @@ const navigateToProfile = () => {
                       marginBottom: "10px",
                     }}
                     src={data.picturePath}
-                    alt="displayimage"
+                    alt="img"
                   />
                 )}
               </div>

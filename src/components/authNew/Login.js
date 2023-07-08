@@ -32,14 +32,14 @@ const Login = () => {
     try {
       if (isSignUp) {
         // Sign Up
-        const response = await axios.post('api/auth/signup', userData);
+        const response = await axios.post('https://techieso7.onrender.com/api/auth/signup', userData);
         console.log('Sign Up Response:', response.data);
         navigate("/auth");
         window.location.reload();
 
       } else {
         // Login
-        const response = await axios.post('api/auth/signin', userData);
+        const response = await axios.post('https://techieso7.onrender.com/api/auth/signin', userData);
         console.log('Login Response:', response.data);
         localStorage.setItem('id', response.data.user._id);
         navigate("/");

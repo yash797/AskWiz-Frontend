@@ -66,7 +66,7 @@ function Post({ post }) {
     try {
       if (likedAnswerId === answerId) {
         // Unlike the answer
-        await axios.post(`/api/answers/upvote/${answerId}`);
+        await axios.post(`https://techieso7.onrender.com/api/answers/upvote/${answerId}`);
         setLikedAnswerId(null);
       }
       // } else {
@@ -106,7 +106,7 @@ function Post({ post }) {
   // };
   
   const openCommentReply = async (answerId) => {
-    await axios.get(`/api/comments/${answerId}`)
+    await axios.get(`https://techieso7.onrender.com/api/comments/${answerId}`)
     .then((res)=>{
 
       console.log(res.data);
@@ -137,7 +137,7 @@ function Post({ post }) {
         user: user,
       };
       await axios
-        .post("/api/answers", body, config)
+        .post("https://techieso7.onrender.com/api/answers", body, config)
         .then((res) => {
           // console.log("Res:",res.data);
           alert("Answer added succesfully");

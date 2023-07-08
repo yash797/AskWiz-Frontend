@@ -15,10 +15,10 @@ function Feed() {
 
 
   const [posts, setPosts] = useState([]);
-  let Link="/api/questions"; 
+  let Link="https://techieso7.onrender.com/api/questions"; 
 
     if(prev!==null){
-      Link=`/api/questions?category=${prev}`;
+      Link=`https://techieso7.onrender.com/api/questions?category=${prev}`;
     }
     const handlePost = () => {
       console.log(category, prev);

@@ -34,7 +34,7 @@ let navigate=useNavigate();
     }
     const id= localStorage.getItem('id');
     console.log(id);
-    await axios.get(`/api/user/${id}`)
+    await axios.get(`https://techieso7.onrender.com/api/user/${id}`)
     .then((res)=>{
       setData(res.data);
       console.log(res.data);
@@ -52,7 +52,7 @@ let navigate=useNavigate();
           user: res.data,
         };
         axios
-        .post("/api/questions", body, config)
+        .post("https://techieso7.onrender.com/api/questions", body, config)
         .then((res) => {
           console.log(res.data);
           alert(res.data.message);

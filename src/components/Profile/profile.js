@@ -15,57 +15,6 @@ import axios from 'axios';
 
 SwiperCore.use([Pagination, Navigation]);
 
-// const members = [
-//     {
-//         username: "Username",
-//         date: "Date",
-//         profile_pic: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-//         category:"#Category",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. Atpariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enimeum quis minima.",
-//         img:"https://images.unsplash.com/photo-1637140945341-f28ada987326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-//     },
-//     {
-//         username: "Username",
-//         date: "Date",
-//         profile_pic: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-//         category: "#Category",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. Atpariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enimeum quis minima.",
-//         img: "https://images.unsplash.com/photo-1637140945341-f28ada987326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-
-//     },
-//     {
-//         username: "Username",
-//         date: "Date",
-//         profile_pic: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-//         category:"#Category",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. Atpariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enimeum quis minima.",
-//         img:"https://images.unsplash.com/photo-1637140945341-f28ada987326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-//     },
-//     {
-//         username: "Username",
-//         date: "Date",
-//         profile_pic: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-//         category:"#Category",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. Atpariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enimeum quis minima.",
-//         img:"https://images.unsplash.com/photo-1637140945341-f28ada987326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-//     },
-//     {
-//         username: "Username",
-//         date: "Date",
-//         profile_pic: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-//         category:"#Category",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. Atpariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enimeum quis minima.",
-//         img:"https://images.unsplash.com/photo-1637140945341-f28ada987326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-//     },
-//     {
-//         username: "Username",
-//         date: "Date",
-//         profile_pic: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-//         category:"#Category",
-//         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam amet vel dolorem. Atpariatur nobis repellat itaque iusto molestiae iure sapiente totam quae, quo consequatur enimeum quis minima.",
-//         img:"https://images.unsplash.com/photo-1637140945341-f28ada987326?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-//     },
-// ];
 
 const Profile = () => {
   function messageme(){
@@ -97,7 +46,7 @@ const Profile = () => {
     
     const id= localStorage.getItem('id');
     console.log(id);
-    await axios.get(`/api/user/${id}`)
+    await axios.get(`https://techieso7.onrender.com/api/user/${id}`)
     .then((res)=>{
       setData(res.data);
       console.log(res.data);
